@@ -91,7 +91,7 @@ exports.seed = async function (knex) {
       donation_amount: 100000,
       date_received_by_electoral_commission: '24/03/2023',
       interested_commercial_sector_of_donor: '[“Farming”, “Dairy”] ',
-      firms_connected_with_donor: '[“Picardy Holdings Limited\n”]',
+      firms_connected_with_donor: '[“Picardy Holdings Limited”]',
     },
     {
       political_party: 'ACT',
@@ -224,7 +224,7 @@ exports.seed = async function (knex) {
     },
     {
       political_party: 'New Zealand First',
-      donor: 'The Estate of Hugh BarrC/-',
+      donor: 'The Estate of Hugh Barr',
       donation_amount: 116162,
       date_received_by_electoral_commission: '3/3/23',
       interested_commercial_sector_of_donor: '[“na”]',
