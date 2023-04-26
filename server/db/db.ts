@@ -1,8 +1,15 @@
 import connection from './connection'
 import { Donation } from '../../client/common/donation'
+import { DonationOverThirty } from '../../client/common/donationoverthirtyk'
 
 export function getAllDonations(db = connection): Promise<Donation[]> {
   return db('notexceedingtwentyk').select('*')
+}
+
+export function getAllDonationsForThirtyK(
+  db = connection
+): Promise<DonationOverThirty[]> {
+  return db('notexceedingthirtythousand').select('*')
 }
 
 export function getOneDonation(id: number, db = connection): Promise<Donation> {
