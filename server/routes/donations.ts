@@ -1,5 +1,4 @@
 import express from 'express'
-import { Donation } from '../../client/common/donation'
 import {
   getAllDonations,
   getOneDonation,
@@ -24,14 +23,6 @@ router.get('/:id', (req, res) => {
     .catch((err) => res.status(500).json({ status: 500, error: err.message }))
 })
 
-router.get('/', (req, res) => {
-  getAllDonations()
-    .then((donations) => {
-      res.json(donations)
-    })
-    .catch((err: Error) => {
-      res.status(500).send(err.message)
-    })
-})
+
 
 export default router
