@@ -14,4 +14,8 @@ server.use(
   donationsoverthirtyk
 )
 
+server.get('*', (req, res) => {
+  res.sendFile(__dirname, './public/index.html')
+})
+
 export default server

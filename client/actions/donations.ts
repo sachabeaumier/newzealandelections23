@@ -5,8 +5,10 @@ import { getAllDonations } from '../apis/apiDonations'
 import { setError } from './error'
 
 export type DonationsAction = { type: 'SET_DONATION'; payload: Donation[] }
-export type DonationsOverThirtyKAction = { type: 'SET_DONATION'; payload: DonationOverThirty[] }
-
+export type DonationsOverThirtyKAction = {
+  type: 'SET_DONATION'
+  payload: DonationOverThirty[]
+}
 
 export function showDonations(setdonation: Donation[]): DonationsAction {
   return {
@@ -15,9 +17,23 @@ export function showDonations(setdonation: Donation[]): DonationsAction {
   }
 }
 
-export function showDonationsOverThirty(setdonation: DonationOverThirty[]): DonationsOverThirtyKAction {
+export function showDonationsOverThirty(
+  setdonation: DonationOverThirty[]
+): DonationsOverThirtyKAction {
   return {
     type: 'SET_DONATION',
     payload: setdonation,
+  }
+}
+
+export function fetchAllDonationsUnderTwenty(): ThunkAction {
+  return (dispatch) => {
+    return getAllDonations()
+      .then((donation) => {
+        dispatch(showDonations(donation))
+      })
+      .catch((err) => {
+        dispatch(setError(err.message))
+      })
   }
 }
