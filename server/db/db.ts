@@ -6,6 +6,13 @@ export function getAllDonations(db = connection): Promise<Donation[]> {
   return db('notexceedingtwentyk').select('*')
 }
 
+export function getOneDonationsForThirtyK(
+  id: number,
+  db = connection
+): Promise<DonationOverThirty[]> {
+  return db('notexceedingthirtythousand').first().where({ id })
+}
+
 export function getAllDonationsForThirtyK(
   db = connection
 ): Promise<DonationOverThirty[]> {
