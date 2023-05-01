@@ -1,6 +1,6 @@
 // import Donationundertwentyk from './SingleDonationUnderTwentyk'
-// import DonationsUnderTwentyKo from './DonationsUnderTwentyk'
-// import { fetchAllDonationsUnderTwenty } from '../actions/donations'
+import DonationsUnderTwentyKo from './DonationsUnderTwentyk'
+import { fetchAllDonationsUnderTwenty } from '../actions/donations'
 import { useAppDispatch } from '../hooks/redux'
 import { useEffect } from 'react'
 import { NavLink, Route, Routes } from 'react-router-dom'
@@ -12,7 +12,15 @@ function App() {
       <header className="header">
         <h1>My Collection</h1>
       </header>
-      <section className="main">{/* add your code here */}</section>
+      <section className="main">
+        <p>Welcome to my collection!</p>
+
+        <Routes>
+          {/* <Route path='/home' element={}/> */}
+
+          <Route path="/" element={<DonationsUnderTwentyKo />} />
+        </Routes>
+      </section>
     </>
   )
 }
