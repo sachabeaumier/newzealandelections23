@@ -3,6 +3,7 @@ import {
   getAllDonations,
   getOneDonation,
   getAllDonationsForThirtyK,
+  getOneDonationsForThirtyK
 } from '../db/db'
 
 const router = express.Router()
