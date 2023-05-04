@@ -1,13 +1,9 @@
-import { useAppDispatch, useAppSelector } from '../hooks/redux'
+import { useAppSelector } from '../hooks/redux'
 import Donationundertwentyk from './SingleDonationUnderTwentyk'
-import { DonationsUnderTwenty } from '../actions/donations'
-import { Link } from 'react-router-dom'
-import { Donation } from '../common/donation'
-import { fetchAllDonationsUnderTwenty } from '../actions/donations'
 
 export default function DonationsUnderTwentyKo() {
   const alldonationsundertwentyk = useAppSelector((state) => state.donations)
-
+  console.log('DonationsUnderTwentyKo: ', alldonationsundertwentyk)
   return (
     <>
       <div className="grid-container">
