@@ -1,11 +1,12 @@
-// import Donationundertwentyk from './SingleDonationUnderTwentyk'
+import React, { PureComponent } from 'react'
 import DonationsUnderTwentyKo from './DonationsUnderTwentyk'
 import { fetchAllDonationsUnderTwenty } from '../actions/donations'
 import { useAppDispatch } from '../hooks/redux'
 import { useEffect } from 'react'
 import Donationundertwentyk from './SingleDonationUnderTwentyk'
 import { NavLink, Route, Routes } from 'react-router-dom'
-// import Home from './Home'
+import LineChartFunction from './Charts'
+import AdjustedLineChartFunction from './AdjustedChart'
 
 function App() {
   return (
@@ -13,16 +14,28 @@ function App() {
       <header className="header">
         <h1>New Zealand Political Donors Tracker API</h1>
       </header>
+      <section>
+        <p>2023 is an Election year</p>
+      </section>
       <section className="main">
-        <p>Welcome to </p>
+        <h2>2023 Individual Donations under $20,000</h2>
 
-        {/* <Routes>
-          <Route path="/" element={<Donationundertwentyk />} />
-        </Routes> */}
+        <div>
+          <LineChartFunction />
+        </div>
+        <h2>
+          2023 Individual Donations under $20,000 adjusted without the Act Party
+        </h2>
 
-        <Routes>
-          <Route path="/" element={<DonationsUnderTwentyKo />} />
-        </Routes>
+        <div>
+          <AdjustedLineChartFunction />
+        </div>
+
+        <p>
+          This Line Graph plots collated data concerning individual donations of
+          under $20,0000 made donors to New Zealand political Parties since the
+          beginning of 2023
+        </p>
       </section>
     </>
   )
