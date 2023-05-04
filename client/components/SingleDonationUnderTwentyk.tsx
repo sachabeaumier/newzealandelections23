@@ -1,6 +1,7 @@
 import * as D from '../common/donation'
 
 export default function Donationundertwentyk(donation: D.Donation) {
+  console.log('single donation: ', donation)
   return (
     <div>
       <h2>Political Party:</h2>
