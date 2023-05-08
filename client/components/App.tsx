@@ -7,6 +7,7 @@ import Donationundertwentyk from './SingleDonationUnderTwentyk'
 import { NavLink, Route, Routes } from 'react-router-dom'
 import LineChartFunction from './Charts'
 import AdjustedLineChartFunction from './AdjustedChart'
+import Appli from './Appli'
 
 function App() {
   return (
@@ -36,6 +37,10 @@ function App() {
           under $20,0000 made donors to New Zealand political Parties since the
           beginning of 2023
         </p>
+
+        <div>
+          <Appli />
+        </div>
       </section>
     </>
   )

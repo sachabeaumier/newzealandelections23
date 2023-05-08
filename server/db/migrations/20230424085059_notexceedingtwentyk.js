@@ -9,8 +9,8 @@ exports.up = function (knex) {
     table.string('donor')
     table.date('date_received_by_electoral_commission')
     table.integer('donation_amount')
-    table.specificType('interested_commercial_sector_of_donor', 'text ARRAY')
-    table.specificType('firms_connected_with_donor', 'text ARRAY')
+    table.specificType('interested_commercial_sector_of_donor', 'text[]')
+    table.specificType('firms_connected_with_donor', 'text[]')
   })
 }
 
