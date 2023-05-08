@@ -248,8 +248,14 @@ exports.seed = async function (knex) {
       donor: 'Sir Peter Vela',
       donation_amount: 50000,
       date_received_by_electoral_commission: '10/03/2023',
-      interested_commercial_sector_of_donor: ['fishing', 'horseracing'],
-      firms_connected_with_donor: ['vela_fishing', 'pencarrow_stud'],
+      interested_commercial_sector_of_donor: JSON.stringify([
+        'fishing',
+        'horseracing',
+      ]),
+      firms_connected_with_donor: JSON.stringify([
+        'vela_fishing',
+        'pencarrow_stud',
+      ]),
     },
     {
       political_party: 'ACT',
