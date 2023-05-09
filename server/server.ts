@@ -8,11 +8,8 @@ const server = express()
 server.use(express.json())
 server.use(express.static(path.join(__dirname, 'public')))
 
-server.use('/api/v1/2023/donationsnotexceedingtwentythousand', donations)
-server.use(
-  '/api/v1/2023/donationsnotexceedingthirtythousand',
-  donationsoverthirtyk
-)
+server.use('/api/v1/2023/donationstwentythousand', donations)
+server.use('/api/v1/2023/donationsthirtythousand', donationsoverthirtyk)
 
 server.get('*', (req, res) => {
   res.sendFile(__dirname, './public/index.html')
