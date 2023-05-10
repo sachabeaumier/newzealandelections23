@@ -1,4 +1,5 @@
 import { useEffect, useState, PureComponent } from 'react'
+import ThirtyLineChartFunction from './ThirtyChart'
 
 export default function Appli() {
   const [data, setdata] = useState()
@@ -15,5 +16,10 @@ export default function Appli() {
     fetchDatas()
   }, [])
 
-  return <div className="Appli"></div>
+  return (
+    <div className="Appli">
+      How to use Recharts with React
+      <Appli data={data} />
+    </div>
+  )
 }
