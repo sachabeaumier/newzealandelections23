@@ -1,11 +1,9 @@
-import React, { PureComponent } from 'react'
+import { PureComponent } from 'react'
 import {
-  RadarChart,
   LineChart,
   XAxis,
   YAxis,
   Tooltip,
-  Legend,
   Line,
   CartesianGrid,
   Label,

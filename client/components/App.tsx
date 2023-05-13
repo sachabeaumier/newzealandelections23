@@ -1,13 +1,8 @@
-import React, { PureComponent } from 'react'
-import DonationsUnderTwentyKo from './DonationsUnderTwentyk'
-import { fetchAllDonationsUnderTwenty } from '../actions/donations'
-import { useAppDispatch } from '../hooks/redux'
-import { useEffect } from 'react'
-import Donationundertwentyk from './SingleDonationUnderTwentyk'
-import { NavLink, Route, Routes } from 'react-router-dom'
 import LineChartFunction from './Charts'
 import AdjustedLineChartFunction from './AdjustedChart'
-import Appli from './Appli'
+import BarChartFuncOverTwentyThous from './GrandTotalOver20K2022'
+
+import ThirtyLineChartFunction from './ThirtyChart'
 
 function App() {
   return (
@@ -17,15 +12,16 @@ function App() {
       </header>
       <section>
         <p>
-          This year, New Zealand will have a general election on the 14th of
-          October 2023. Given the importance of this election, it is vitaly
-          important to have full transparency around whom is funding our
-          political parties if we are to believe we have a fully democratic
-          system. Looking through the lens of political economy, the role of
-          commerce and the way financial resources are used to press and
-          incentivise the legislative politic towards donor's sectoral or
-          personal interests should not be understated in the shaping of public
-          policy and a party's legislative agenda.
+          New Zealand is to hold a general election on the 14th of October 2023.
+          Given the importance of this election, it is vitally important to have
+          full transparency around whom is funding our political parties if we
+          are to have faith in a democratic system. Looking through the lens of
+          political economy, the influence and distribution of economic
+          resources within a society must be understood as concomitant with that
+          of the political system it resides in. Therefore the role of financial
+          resources by those of the donor's sectoral or business interests
+          should not be understated in the shaping of public policy and a
+          party's legislative and political agenda.
         </p>
 
         <p>
@@ -41,14 +37,40 @@ function App() {
         <h2>2023 Individual Donations under $20,000</h2>
 
         <div>
-          <LineChartFunction />
+          <p>
+            This graph collates from the beginning of 2023 all the individual
+            donations made of an amount less than $20,000. A list of the
+            donor's, their amounts and the associated political parties can be
+            found in the API below.
+          </p>
+
+          <p>
+            <a href="http://localhost:3000/api/v1/2023/donationstwentythousand">
+              All Individual Donations made under $20,000
+            </a>
+          </p>
         </div>
-        <h2>
-          2023 Individual Donations under $20,000 adjusted without the Act Party
-        </h2>
 
         <div>
+          <LineChartFunction />
+        </div>
+
+        <div>
+          <h2>
+            2023 Individual Donations under $20,000 adjusted without the Act
+            Party
+          </h2>
           <AdjustedLineChartFunction />
+        </div>
+
+        <div>
+          <h2>2022 Individual Donations over $20,000</h2>
+          <ThirtyLineChartFunction />
+        </div>
+
+        <div>
+          <h2>2022 Total of All Individual Donations over $20,000</h2>
+          <BarChartFuncOverTwentyThous />
         </div>
 
         <p>To access the APIs, do use the links below</p>
@@ -62,15 +84,7 @@ function App() {
             All Individual Donations made over $20,000
           </a>
         </p>
-        <div>
-          <p>
-            http://localhost:3000/api/v1/2023/donationsnotexceedingtwentythousand
-          </p>
-        </div>
-
-        <div>
-          <Appli />
-        </div>
+        <div></div>
       </section>
     </>
   )
